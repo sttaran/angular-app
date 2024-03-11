@@ -35,7 +35,6 @@ describe("List", ()=>{
         const text = $el.text()
         actualFruits.push(text.trim())
       }).then(()=>{
-        console.log(actualFruits)
         expect(expectedFruits).to.deep.equal(actualFruits)
       })
     })
