@@ -28,7 +28,7 @@
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points --tsconfig \"./src/tsconfig.app.json\"",
-    "test:open": "npx cypress open"
+    "test:open": "npx cypress open --config-file ./cypress.config.stage.ts"
   },
   "dependencies": {
     "@angular/animations": "^15.2.10",
