@@ -1,14 +1,12 @@
-import CreateUser from "./CreateUser"
-import CheckUser from "./CheckUser"
-import UpdateUser from "./UpdateUser"
+import SmartTable from "../../support/SmartTable"
+
 
   describe("smart-table",{ }, ()=>{
-    const createUser = new CreateUser()
-    const checkUser = new CheckUser()
-    const updateUser = new UpdateUser()
+    const smartTable = new SmartTable()
+   
 
     beforeEach(() =>{
-      createUser.openpage()
+      smartTable.openpage()
     })
 
     it('create and check user', () =>{
@@ -20,21 +18,21 @@ import UpdateUser from "./UpdateUser"
         email : 'testemail@ii.io',
         age : '33'
       }
-      createUser.plusButton.click()
-      createUser.idInput.type(userData.id)
-      createUser.firstnameInput.type(userData.firstName)
-      createUser.lastnameInput.type(userData.lastName)
-      createUser.usernameInput.type(userData.userName)
-      createUser.emailInput.type(userData.email)
-      createUser.ageInput.type(userData.age)
-      createUser.saveUser.click()
+      smartTable.plusButton.click()
+      smartTable.idInput.type(userData.id)
+      smartTable.firstnameInput.type(userData.firstName)
+      smartTable.lastnameInput.type(userData.lastName)
+      smartTable.usernameInput.type(userData.userName)
+      smartTable.emailInput.type(userData.email)
+      smartTable.ageInput.type(userData.age)
+      smartTable.saveUser.click()
 
-      checkUser.idCheck.should("have.text", userData.id)
-      checkUser.firstnameCheck.should("have.text", userData.firstName)
-      checkUser.lastnameCheck.should("have.text", userData.lastName)
-      checkUser.usernameCheck.should("have.text", userData.userName)
-      checkUser.emailCheck.should("have.text", userData.email)
-      checkUser.ageCheck.should("have.text", userData.age)
+      smartTable.idCheck.should("have.text", userData.id)
+      smartTable.firstnameCheck.should("have.text", userData.firstName)
+      smartTable.lastnameCheck.should("have.text", userData.lastName)
+      smartTable.usernameCheck.should("have.text", userData.userName)
+      smartTable.emailCheck.should("have.text", userData.email)
+      smartTable.ageCheck.should("have.text", userData.age)
 
     })
 
@@ -47,21 +45,21 @@ import UpdateUser from "./UpdateUser"
         email : 'rpmaemail@ii.io',
         age : '22'
       }
-      updateUser.updateButton.click()
-      createUser.idInput.clear().type(userData.id)
-      createUser.firstnameInput.clear().type(userData.firstName)
-      createUser.lastnameInput.clear().type(userData.lastName)
-      createUser.usernameInput.clear().type(userData.userName)
-      createUser.emailInput.clear().type(userData.email)
-      createUser.ageInput.clear().type(userData.age)
-      createUser.saveUser.click()
+      smartTable.updateButton.click()
+      smartTable.idInput.clear().type(userData.id)
+      smartTable.firstnameInput.clear().type(userData.firstName)
+      smartTable.lastnameInput.clear().type(userData.lastName)
+      smartTable.usernameInput.clear().type(userData.userName)
+      smartTable.emailInput.clear().type(userData.email)
+      smartTable.ageInput.clear().type(userData.age)
+      smartTable.saveUser.click()
 
-      checkUser.idCheck.should("have.text", userData.id)
-      checkUser.firstnameCheck.should("have.text", userData.firstName)
-      checkUser.lastnameCheck.should("have.text", userData.lastName)
-      checkUser.usernameCheck.should("have.text", userData.userName)
-      checkUser.emailCheck.should("have.text", userData.email)
-      checkUser.ageCheck.should("have.text", userData.age)
+      smartTable.idCheck.should("have.text", userData.id)
+      smartTable.firstnameCheck.should("have.text", userData.firstName)
+      smartTable.lastnameCheck.should("have.text", userData.lastName)
+      smartTable.usernameCheck.should("have.text", userData.userName)
+      smartTable.emailCheck.should("have.text", userData.email)
+      smartTable.ageCheck.should("have.text", userData.age)
     })
   })
 

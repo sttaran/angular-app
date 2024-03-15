@@ -1,4 +1,4 @@
-import './commands'
+import '../../support/commands'
 
 describe("login",{ }, ()=>{
     it('login and check url', ()=>{
