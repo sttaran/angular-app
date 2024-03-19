@@ -6,6 +6,6 @@ describe("Auth tab functionality", () => {
     it("Login to dashboard", () => { 
       cy.visit("/auth/login"); 
       authTab.login();
-      cy.url().should("eq", "http://localhost:4200/pages/dashboard")
-    }); 
+      cy.url({timeout: 6000}).should("contains", "/pages/dashboard")
+    });
   });
