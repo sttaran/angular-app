@@ -1,11 +1,11 @@
-import AuthTab from "../../page-Objects/AuthTab.js";
+import AuthPage from "../../page-Objects/AuthTab.js";
 
-const authTab = new AuthTab();
+const authPage = new AuthPage();
 
-describe("Auth tab functionality", () => { 
+describe("Auth page functionality", () => { 
     it("Login to dashboard", () => { 
       cy.visit("/auth/login"); 
-      authTab.login();
+      authPage.login();
       cy.url({timeout: 6000}).should("contains", "/pages/dashboard")
     });
   });

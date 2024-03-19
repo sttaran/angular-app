@@ -1,12 +1,12 @@
 import { faker } from '@faker-js/faker';
 
-class AuthTab {
+class AuthPage {
     login() {
-        cy.get('#input-email').type(faker.internet.email());
-        cy.get('#input-password').type(faker.internet.password());
+        cy.get('#input-email').type("somerandomemail@gmail.com");
+        cy.get('#input-password').type("12345678");
         cy.get('.custom-checkbox').click();
         cy.get('.appearance-filled').click();
     }
 }
 
-export default AuthTab;
+export default AuthPage;
