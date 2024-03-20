@@ -1,16 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 class SmartTablePage {
-    createUser() {
-        const user = {
-            id: faker.number.int(),
-            firstName: faker.person.firstName(),
-            lastName: faker.person.lastName(),
-            username: faker.internet.userName(),
-            email: faker.internet.email(),
-            age: faker.number.int({ min: 18, max: 100 })
-        };
-
+    createUser(user) {
         cy.get('[ng2-st-thead-form-row=""] > :nth-child(2)').should("be.visible").type(user.id.toString());
         cy.get('[ng2-st-thead-form-row=""] > :nth-child(3)').should("be.visible").type(user.firstName);
         cy.get('[ng2-st-thead-form-row=""] > :nth-child(4)').should("be.visible").type(user.lastName);
@@ -18,8 +9,6 @@ class SmartTablePage {
         cy.get('[ng2-st-thead-form-row=""] > :nth-child(6)').should("be.visible").type(user.email);
         cy.get('[ng2-st-thead-form-row=""] > :nth-child(7)').should("be.visible").type(user.age.toString());
         cy.get('.nb-checkmark').click();
-
-        return user;
     }
 
     filterCreatedUser(user) {
