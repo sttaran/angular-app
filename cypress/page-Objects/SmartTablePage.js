@@ -20,18 +20,14 @@ class SmartTablePage {
         cy.get('.ng2-smart-filters > .age').should("be.visible").type(user.age.toString());
     }
 
-    verifyCreatedUserData(newUser) {
-        cy.get("tbody")
-        .should("be.visible")
-        .within(() => {
-          cy.get(".ng2-smart-row").should("have.length", 1);
-          cy.get(':nth-child(2)').should("contain.text", newUser.id);
-          cy.get(':nth-child(3)').should("contain.text", newUser.firstName);
-          cy.get(':nth-child(4)').should("contain.text", newUser.lastName);
-          cy.get(':nth-child(5)').should("contain.text", newUser.username);
-          cy.get(':nth-child(6)').should("contain.text", newUser.email);
-          cy.get(':nth-child(7)').should("contain.text", newUser.age);
-        });   
+    verifyCreatedUserData(newUser) { 
+            cy.get(".ng2-smart-row").should("have.length", 1);
+            cy.get(':nth-child(2)').should("contain.text", newUser.id);
+            cy.get(':nth-child(3)').should("contain.text", newUser.firstName);
+            cy.get(':nth-child(4)').should("contain.text", newUser.lastName);
+            cy.get(':nth-child(5)').should("contain.text", newUser.username);
+            cy.get(':nth-child(6)').should("contain.text", newUser.email);
+            cy.get(':nth-child(7)').should("contain.text", newUser.age);  
     }
 
     clearEditFields() {

@@ -30,7 +30,7 @@ describe("Smart tables functionality", () => {
       });
   });
 
-  it.only("Creates new user, edits it and checks if edited values are added to the table", () => {
+  it("Creates new user, edits it and checks if edited values are added to the table", () => {
     cy.get(".ng2-smart-actions-title").should("be.visible").click();
     
     const user = {
