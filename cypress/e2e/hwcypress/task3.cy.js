@@ -11,6 +11,5 @@ describe('modal-overlays', () => {
     cy.get('button[status="danger"].appearance-filled.size-medium.shape-rectangle.nb-transition')
       .should('exist')
       .and('have.text', 'Cancel');
-
   });
 });
